@@ -10,10 +10,6 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-/**
- * Сервлет для обработки страницы результатов игры.
- * Отображает итоги игры (победа/поражение) и статистику игрока.
- */
 @WebServlet(name = "resultServlet", value = "/result")
 public class ResultServlet extends HttpServlet {
 
@@ -25,8 +21,6 @@ public class ResultServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-
-        // Получаем объект игры из сессии
         Game game = (Game) session.getAttribute("game");
 
         // Если игры нет или игра не завершена - перенаправляем на страницу игры
@@ -35,18 +29,25 @@ public class ResultServlet extends HttpServlet {
             return;
         }
 
-        // Получаем статистические данные из сессии
+        // Получаем и обновляем статистические данные
         String ipAddress = (String) session.getAttribute("ipAddress");
         Integer gamesPlayed = (Integer) session.getAttribute("gamesPlayed");
+        if (gamesPlayed == null) {
+            gamesPlayed = 0;
+        }
+
+        // Увеличиваем счетчик сыгранных игр
+        session.setAttribute("gamesPlayed", gamesPlayed + 1);
 
         // Устанавливаем атрибуты для JSP
         req.setAttribute("score", game.getScore());
+        req.setAttribute("maxScore", game.getMaxPossibleScore()); // Добавляем максимальный счет
         req.setAttribute("playerName", game.getPlayerName());
         req.setAttribute("ipAddress", ipAddress);
-        req.setAttribute("gamesPlayed", gamesPlayed);
+        req.setAttribute("gamesPlayed", gamesPlayed + 1);
         req.setAttribute("playerWon", game.isPlayerWon());
 
-        // Передаем управление JSP для отображения результатов
+        // Передаем управление JSP
         req.getRequestDispatcher("/result.jsp").forward(req, resp);
 
         // Очищаем игру из сессии после показа результатов

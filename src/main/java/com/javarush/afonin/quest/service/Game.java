@@ -34,35 +34,65 @@ public class Game {
 
         Question currentQuestion = getCurrentQuestion();
         if (currentQuestion == null) {
-            gameOver = true;
+            endGame(false);
             return false;
         }
 
         int nextQuestionIndex = currentQuestion.getNextQuestionIndex(answerIndex);
 
-        // Обработка специальных кодов:
-        if (nextQuestionIndex == -2) {  // Победа (правда)
-            playerWon = true;
-            gameOver = true;
-            score = getMaxPossibleScore();  // Максимальный балл
-            return false; // Возвращаем false, так как игра завершена
+        // Обработка вариантов, ведущих к проигрышу (3 или 4)
+        if (nextQuestionIndex == 3 || nextQuestionIndex == 4) {
+            endGame(false);
+            return false;
         }
-        if (nextQuestionIndex == -1) {  // Поражение (ложь)
-            gameOver = true;
-            playerWon = false;
+
+        // Обработка специальных кодов:
+        if (nextQuestionIndex == -2) {  // Победа
+            endGame(true);
+            return false;
+        }
+        if (nextQuestionIndex == -1) {  // Поражение
+            endGame(false);
             return false;
         }
 
         // Обычный переход на следующий вопрос
         score++;
         currentQuestionIndex = nextQuestionIndex;
-        gameOver = (getCurrentQuestion().getAnswers().length == 0);
 
-        return !gameOver;
+        // Проверяем, есть ли следующий вопрос
+        if (getCurrentQuestion() == null) {
+            endGame(false);
+            return false;
+        }
+
+        return true;
+    }
+
+    public void endGame(boolean playerWon) {
+        this.gameOver = true;
+        this.playerWon = playerWon;
+
+        if (playerWon) {
+            this.score = getMaxPossibleScore();
+        }
+
+        if (!playerWon && (currentQuestionIndex == 3 || currentQuestionIndex == 4)) {
+            this.score = 0;
+        }
+    }
+
+    // Сеттеры для gameOver и playerWon
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+
+    public void setPlayerWon(boolean playerWon) {
+        this.playerWon = playerWon;
     }
 
     public int getMaxPossibleScore() {
-        return 3; // Максимум можно получить 3 очка за полное прохождение
+        return 3;
     }
 
     public int getScore() {
@@ -83,5 +113,17 @@ public class Game {
 
     public int getCurrentQuestionId() {
         return currentQuestionIndex;
+    }
+
+    public String getGameResultMessage() {
+        if (playerWon) {
+            return "ПОБЕДА! Тебя вернули домой!";
+        } else {
+            switch (currentQuestionIndex) {
+                case 3: return "Ты отказался от вызова и остался на корабле!";
+                case 4: return "Ты не смог договориться с капитаном!";
+                default: return "Игра завершена!";
+            }
+        }
     }
 }

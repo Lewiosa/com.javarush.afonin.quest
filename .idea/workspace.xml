@@ -5,25 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56153c3a-b151-4af1-be4d-f7bf46d3cc10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/repository/QuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/zhuravlev/quest/controller/GameServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/controller/GameServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/zhuravlev/quest/controller/ResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/controller/ResultServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/zhuravlev/quest/controller/StopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/controller/StopServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/zhuravlev/quest/entity/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/entity/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/zhuravlev/quest/repository/QuestionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/zhuravlev/quest/service/DetectorIP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/service/DetectorIP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/zhuravlev/quest/service/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/service/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/img/welcome.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/welcome.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/controller/ResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/controller/ResultServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/controller/StopServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/controller/StopServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/service/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/afonin/quest/service/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/question.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/question.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/result.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +148,7 @@
       <workItem from="1744650341714" duration="30000" />
       <workItem from="1744650436029" duration="1750000" />
       <workItem from="1744652188435" duration="6445000" />
+      <workItem from="1744660712951" duration="1286000" />
     </task>
     <servers />
   </component>

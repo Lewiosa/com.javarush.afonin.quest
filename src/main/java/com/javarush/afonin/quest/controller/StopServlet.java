@@ -23,11 +23,20 @@ public class StopServlet extends HttpServlet {
         HttpSession session = req.getSession();
         Game game = (Game) session.getAttribute("game");
 
+        if (game != null) {
+            // Помечаем игру как завершенную (проигрыш)
+            game.setGameOver(true);
+            game.setPlayerWon(false);
+        }
+
         // Увеличиваем счетчик игр
         Integer gamesPlayed = (Integer) session.getAttribute("gamesPlayed");
+        if (gamesPlayed == null) {
+            gamesPlayed = 0;
+        }
         session.setAttribute("gamesPlayed", gamesPlayed + 1);
 
         // Перенаправляем на страницу результата
-        resp.sendRedirect("/result");
+        resp.sendRedirect(req.getContextPath() + "/result");
     }
 }

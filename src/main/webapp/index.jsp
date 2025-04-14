@@ -71,7 +71,7 @@
     input[type="text"] {
       background-color: #adb2b7;
       border: 1px solid #4e5d6c;
-      color: #f8f9fa;
+      color: #000;
       padding: 10px 15px;
       border-radius: 5px;
       transition: all 0.3s ease;
@@ -81,7 +81,7 @@
       outline: none;
       border-color: #6699ff;
       box-shadow: 0 0 10px rgba(102, 153, 255, 0.5);
-      background-color: #34495e;
+      background-color: #fff;
     }
 
     .stats-panel {
