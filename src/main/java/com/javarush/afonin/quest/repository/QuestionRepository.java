@@ -20,12 +20,7 @@ public class QuestionRepository {
             // 2 - На мостике
             new Question("Ты поднялся на мостик. Ты кто?",
                     new String[]{"Рассказать правду о себе", "Солгать о себе"},
-                    new int[]{-2, -1}),  // -2 = победа, -1 = поражение
-
-            // Остальные вопросы
-            new Question("Ты отклонил вызов. Поражение", new String[]{}, new int[]{-1}),
-            new Question("Ты не пошел на переговоры. Поражение", new String[]{}, new int[]{-1}),
-            new Question("Твоя ложь разоблачена. Поражение", new String[]{}, new int[]{-1})
+                    new int[]{-2, -1})
     );
 
     public List<Question> getAllQuestions() {

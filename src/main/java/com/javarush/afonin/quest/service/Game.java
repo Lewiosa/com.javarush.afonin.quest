@@ -115,15 +115,5 @@ public class Game {
         return currentQuestionIndex;
     }
 
-    public String getGameResultMessage() {
-        if (playerWon) {
-            return "ПОБЕДА! Тебя вернули домой!";
-        } else {
-            switch (currentQuestionIndex) {
-                case 3: return "Ты отказался от вызова и остался на корабле!";
-                case 4: return "Ты не смог договориться с капитаном!";
-                default: return "Игра завершена!";
-            }
-        }
-    }
+
 }

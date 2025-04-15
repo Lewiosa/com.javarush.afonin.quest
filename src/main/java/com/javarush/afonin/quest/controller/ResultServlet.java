@@ -36,15 +36,16 @@ public class ResultServlet extends HttpServlet {
             gamesPlayed = 0;
         }
 
-        // Увеличиваем счетчик сыгранных игр
-        session.setAttribute("gamesPlayed", gamesPlayed + 1);
+
+        int newGamesPlayed = gamesPlayed;
+        session.setAttribute("gamesPlayed", newGamesPlayed);
 
         // Устанавливаем атрибуты для JSP
         req.setAttribute("score", game.getScore());
-        req.setAttribute("maxScore", game.getMaxPossibleScore()); // Добавляем максимальный счет
+        req.setAttribute("maxScore", game.getMaxPossibleScore());
         req.setAttribute("playerName", game.getPlayerName());
         req.setAttribute("ipAddress", ipAddress);
-        req.setAttribute("gamesPlayed", gamesPlayed + 1);
+        req.setAttribute("gamesPlayed", newGamesPlayed);
         req.setAttribute("playerWon", game.isPlayerWon());
 
         // Передаем управление JSP
